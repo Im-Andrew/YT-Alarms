@@ -1,0 +1,67 @@
+@import '../../styles/layout.scss';
+
+.container {
+    padding: 10px;
+    margin: 10px 0;
+
+    background-color: #d4f4ff;
+    border-radius: 7px;
+    border: 2px solid #e5eafd;
+    border-bottom: 0;
+    border-right: 0;
+}
+
+.container input[type=text] {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    border-bottom: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    background-color: rgba( 255, 255, 255, .80 );
+    outline: none;
+
+    &:active, &:focus {
+        border: 1px solid gainsboro;
+        background-color: white;
+    }
+
+}
+
+.label {
+    font-weight: bold;
+
+    & input {
+        display: block;
+        width: 95%;
+        margin: 5px 2px;
+        padding: 3px 0;
+        padding-left: 2px;
+    }
+}
+
+.delete-button {
+    background-color: #fd3c3c;
+    border: 1px solid #ca1c1c;
+    border-radius: 12px;
+    padding: 2px 6px;
+    font-weight: bold;
+}
+
+.name-container {
+    display: flex;
+
+    & label {
+        flex-grow: 1;
+    }
+}
+
+.name-and-time {
+    & label {
+        &:first-child{
+            width: 60%;
+        }
+        width: 40%;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+}

@@ -1,0 +1,89 @@
+@import '../../styles/layout';
+$bar-color: rgb(245, 245, 245);
+
+.outter-bar {
+	background-color: $bar-color;
+	width: 100%;
+}
+
+.bar {
+	@include screen-small {
+		flex-direction: column;
+		padding: 0;
+	}
+
+	align-items: flex-end;
+	display: flex;
+	flex-flow: row nowrap;
+	float: clear;
+	justify-content: space-between;
+	margin: auto;
+	max-width: $size-large;
+	padding: 20px 3px;
+}
+
+.tab-group {
+	@include screen-small {
+		display: none; // Display will be toggled in this mode
+		padding: 0;
+		width: 100%;
+	}
+
+	padding-right: 5px;
+}
+
+.brand {
+	// Will expand to fill the top
+	@include screen-small {
+		align-items: flex-end;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		width: 100%;
+	}
+}
+
+.title {
+	@include screen-small {
+		font-size: 1.75rem;
+	}
+	font-size: 30px;
+	font-weight: bolder;
+	margin: 0;
+	padding: 0;
+}
+
+// Hamburger icon  (adapted from: https://w3bits.com/animated-menu-icon-css/ )
+.hamburger {
+	@include screen-small {
+		display: inline-block;
+	}
+
+	display: none;
+	margin: 0 .75em;
+	width: 40px;
+
+	&::after,
+	div,
+	&::before {
+		background-color: #000;
+		border-radius: 3px;
+		content: '';
+		display: block;
+		height: 5px;
+		margin: 7px 0;
+		transition: transform .2s ease-in-out;
+	}
+
+	&.open {
+		div { transform: scale(0); }
+
+		&::before {
+			transform: translateY(12px) rotate(135deg);
+		}
+
+		&::after {
+			transform: translateY(-12px) rotate(-135deg);
+		}
+	}
+}

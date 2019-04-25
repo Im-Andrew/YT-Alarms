@@ -1,0 +1,53 @@
+
+.container {
+    width: 160px;
+}
+
+.header {
+    height: 13px;
+    & > h3 {
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.video {
+    width: 100%;
+    margin: 4px 0;
+}
+
+.footer {
+    padding: 8px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button, .snooze, .stop, .note {
+    border: 1px solid rgb(218, 216, 216);
+    border-radius: 2px;
+    text-transform: capitalize;
+    padding: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.snooze {
+    background-color: rgb(123, 191, 255);
+}
+
+.stop {
+    background-color: rgb(255, 143, 143);
+}
+
+.note {
+    background-color: beige;
+}
+
+.comment {
+    width: 100%;
+    background-color: rgb(248, 248, 244);
+}

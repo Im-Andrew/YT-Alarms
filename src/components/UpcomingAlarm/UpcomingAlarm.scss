@@ -1,0 +1,55 @@
+
+.container {
+    width: 150px;
+    height: 120px;
+
+    a:link {
+        text-decoration: inherit;
+        color: inherit;
+        cursor: auto;
+    }
+
+    a:visited {
+        text-decoration: inherit;
+        color: inherit;
+        cursor: auto;
+    }
+}
+
+.header {
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.set-time {
+    background-color: white;
+    border: 0.5px solid black;
+    padding: 1px;
+}
+
+.thumbnail {
+    position: relative;
+    display: flex;
+    height: 120px - 22px;
+    justify-content: center;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.countdown {
+    position: absolute;
+    background-color: white;
+    padding: 4px;
+    line-height: 14px;
+    height: 14px;
+    border-radius: 14px;
+    width: 50%;
+    text-align: center;
+    overflow: hidden;
+    align-self: center;
+}

@@ -1,0 +1,34 @@
+$size-small: 620px;
+$size-large: 1026px;
+$size-xs-small: 404px;
+
+@mixin screen-min($size){
+	@media (max-width: #{$size}) {
+		@content;
+	}	
+}
+
+@mixin screen-max($size){
+	@media (min-width: #{$size}) {
+		@content;
+	}	
+}
+
+@mixin screen-small {
+	@media (max-width: #{$size-small}) {
+		@content;
+	}
+}
+
+@mixin screen-large {
+	@media (min-width: #{$size-large}) {
+		@content;
+	}
+}
+
+@mixin viewportRatio($x, $y) {
+  width: 100vw;
+  height: $y * 100vw / $x;
+  max-width: $x / $y * 100vh;
+  max-height: 100vh;
+}

@@ -1,0 +1,50 @@
+@import '../../styles/layout';
+
+$background-active: rgba(0, 247, 255, .116);
+$background-normal: rgba(245, 245, 245);
+$border-active: rgb(0, 156, 204);
+$border-normal: transparent;
+$small-padding: '30px 0;';
+
+.normal {
+	border-bottom: 3px solid $border-normal;
+	font-size: 18px;
+	margin-left: 15px;
+	text-decoration: none;
+	color: black;
+
+	&:hover { border-color: #f00; }
+
+	// Remove the "button" style for mobile, make it wide!
+	@include screen-small {
+		background-color: $background-normal;
+		border: 0;
+		display: block;
+		margin: 0;
+		padding: #{$small-padding};
+		text-align: left;
+		width: 100%;
+
+		&:hover { background-color: $background-active; }
+	}
+}
+
+.active {
+	background-color: $background-active;
+	border: 1px solid $border-active;
+	border-radius: 3px;
+	composes: normal;
+	padding: 0 18px;
+
+	&:hover {
+		border-color: $border-active;
+		cursor: default;
+	}
+
+	@include screen-small {
+		border: 0;
+		padding: #{$small-padding};
+
+		&:hover { background-color: $background-active; }
+	}
+}

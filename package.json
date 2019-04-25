@@ -1,0 +1,93 @@
+{
+  "name": "alarmclock",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.11",
+    "memoize-one": "^5.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "webpack": "^4.29.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "docz": "^0.13.7",
+    "docz-theme-default": "^0.13.7",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-import-resolver-webpack": "^0.11.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.11.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.3.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.1.0",
+    "lint-staged": "^8.1.4",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.8.3",
+    "sass": "^1.17.1",
+    "sass-lint": "^1.12.1",
+    "sass-lint-webpack": "^1.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.0",
+    "webpack-merge": "^4.2.1"
+  },
+  "scripts": {
+    "test": "jest --config configs/jest.config.js",
+    "build": "webpack --config configs/webpack.prod.js",
+    "start": "webpack-dev-server --open --config configs/webpack.dev.js",
+    "lint": "eslint -c configs/.eslintrc.js --ext .js,.jsx src",
+    "lint:fix": "eslint -c configs/.eslintrc.js --ext .js,.jsx src --fix",
+    "lint:sass": "sass-lint -c configs/.scss-lint.yml -q -v",
+    "component": "node ./tools/templater.js component src/components/",
+    "component:page": "node ./tools/templater.js component src/pages/",
+    "docz:dev": "docz dev",
+    "docz": "npm run docz:dev",
+    "docz:build": "docz build"
+  },
+  "husky": {},
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "npm run lint",
+      "git add"
+    ],
+    "*.{scss,sass}": [
+      "npm run lint:sass",
+      "git add"
+    ],
+    "ignore": [
+      "tools/*"
+    ]
+  }
+}
