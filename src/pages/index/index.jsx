@@ -34,7 +34,12 @@ function YTAApplication({ location:{ pathname } }) {
       {/* <Route path="/history" component={}/> */}
       <Route 
         path="/Active" 
-        children={ (match) => <Active display={match.match!==null}/> }
+        children={ ({ match, history }) => (
+          <Active 
+            display={ match!==null }
+            history={history}
+          />
+         )}
       />
 
     </>

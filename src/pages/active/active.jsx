@@ -32,7 +32,10 @@ class Active_ extends React.Component {
 
 	static propTypes = {
 		alarms: PropTypes.arrayOf(PropTypes.object).isRequired,
-		display: PropTypes.bool.isRequired
+		display: PropTypes.bool.isRequired,
+		history: PropTypes.shape({
+			push: PropTypes.func.isRequired
+		})
 	};   
 
 	state = {
@@ -51,10 +54,12 @@ class Active_ extends React.Component {
 	};
 
 	onAlarmActivated = (alarm) => {
-		const {activeAlarms} = this.state;
+		const { activeAlarms } = this.state;
+		const { history } = this.props;
 		this.setState({
 			activeAlarms: [...activeAlarms, alarm]
 		});
+		history.push('/Active');
 	}
 
 	render() {
